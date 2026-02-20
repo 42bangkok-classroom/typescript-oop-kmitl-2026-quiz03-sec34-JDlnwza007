@@ -21,6 +21,8 @@ export class User {
   }
 
   getFullName() {
-    return `${this.firstname} ${this.lastname}`;
+    return [this.firstname, this.lastname]
+      .filter(name => name !== "") 
+      .join(" ");
   }
 }
